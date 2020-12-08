@@ -1,0 +1,526 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+.container {
+  min-height: 100vh;
+  max-height: 200px;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.myh1 {
+  color: red;
+}
+
+.main {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.grid{
+  flex: 1;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+
+.cardinner{
+  background: var(--bg);
+  box-shadow: var(--shadowBig);
+  margin: 1rem;
+  flex-basis: 45%;
+  min-width: 300px;
+  min-height: 400px;
+  position:relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  transform : perspective(700px) rotateY(var(--rotate-y,0));
+
+}
+
+.deck{
+  background: var(--bg);
+  border-radius: 20px;
+  box-shadow: var(--shadowBig);
+  margin: 1rem;
+  padding: 1.5rem;
+  width:250px;
+  height: 280px;
+  
+  position: relative;
+  text-align: left;
+}
+
+.flipButton{ 
+  margin:auto;
+  border-radius: 20px;
+  background: var(--bg);
+  width: 100px; height: 50px;
+  position: absolute;
+  bottom:0;
+  
+
+
+}
+.cardflip .cardinner {
+  transform: rotateY(180deg);
+}
+
+
+.cardfront, .cardback{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: visible;
+}
+
+.cardfront{
+  padding:1rem;
+}
+
+.cardback{
+  padding:1rem;
+  transform:rotateY(-180deg);
+  
+}
+
+.answerBack{
+  text-align: center;
+}
+
+
+.card:hover,
+.card:focus,
+.card:active {
+  color: #0070f3;
+  border-color: #0070f3;
+}
+
+.card h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.logo {
+  height: 1em;
+}
+
+.bodylogin {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffffff;
+  
+}
+.containerlogin {
+  position: relative;
+  width: 420px;
+  min-height: 550px;
+  height: auto;
+  max-height: 600px;
+  background-color: #ffffff;
+  padding: 15px 25px;
+  font-size: 18px;
+  font-family: "Quicksand", sans-serif;
+  box-shadow: 0 5px 5px #7c8395;
+  border-radius: 10%;
+}
+
+.logologin {
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  box-shadow: 0 5px 5px #7c8395;
+  font-size: 1.8em;
+  background-color:  #ffffff;
+  color: #1d10d1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-color: #1d10d1;
+}
+
+.tabbody {
+  position: relative;
+
+  height: auto;
+  max-height: 400px;
+  padding: 15% 5%;
+  margin-top: 15%;
+  background-color: #ffffff;
+  color:  #1d10d1;
+  box-shadow: 0px 5px 10px #7c8395;
+  border-radius: 30px;
+  font-size: 1rem;
+}
+.tabbody.active {
+  display: block;
+}
+
+.rowlogin {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid  #1d10d1;
+  padding: 1.8% 0;
+  margin: 20px 0;
+}
+
+.rowlogin .input {
+  width: 90%;
+  border: none;
+  outline: none;
+  color:  #1d10d1;
+  font-weight: 550;
+}
+.input::placeholder {
+  color: #2619e2;
+}
+
+.link {
+  display: inline-block;
+  font-size: 0.8em;
+  width: 100%;
+  text-decoration: none;
+  color: #2b384f;
+  text-align: right;
+} 
+.link:hover {
+  text-decoration: underline;
+}
+
+.btnlogin {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  width: 120px;
+  height: 45px;
+  border-radius: 50px;
+  background-color: #1d10d1;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: #7c8395;
+}
+
+.tabfooter {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  height: 30px;
+  display: flex;
+  color: #1d10d1;
+}
+
+.tablinkConnexion {
+  margin: 0;
+  padding-right: 10px;
+}
+.tablinkInscription {
+  margin: 0;
+  padding-left: 10px;
+}
+
+.tablink.active {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 520px) {
+  .containerlogin {
+    width: 80%;
+    min-width: 380px;
+    min-height: 490px;
+  }
+  .tabbody {
+    width: 100%;
+    padding: 15% 5%;
+    margin-top: 25%;
+    max-height: 420px;
+  }
+}
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+
+.wrapperCard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.QuestionCard {
+  margin-top : 1rem;
+  padding:1rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align:left; 
+  word-wrap: break-word;
+}
+
+.bannerimgCardInit {
+  position: absolute;
+  /* background-image: url(https://images.unsplash.com/photo-1582727657635-c771002bdada?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);  */
+  height: 10rem;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.profileImgCard {
+  width: 5rem;
+  clip-path: circle(30px at center);
+  margin-top: 4.5rem;
+
+}
+
+.nameCard {
+  font-weight: bold;
+  font-size: 1.5rem;
+
+}
+
+.descriptionCard {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+
+}
+
+.btnCard {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border: black;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  padding: 1rem;
+  background-color: black;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.btnCardBack {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border: black;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  padding: 1rem;
+  background-color: black;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.btnKeepGoing
+{
+  margin-top: 4rem;
+  border-radius: 20px;
+  width: 100%;
+  border: black;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  padding: 1rem;
+  background-color: black;
+}
+
+.carda {
+  box-shadow: var(--shadowBig);
+  position: relative; /* Required to absolutely position the child faces */
+  width: 380px;
+  height:550px;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  text-align: center;
+  border-radius: 1rem;
+  display:flex;
+  flex-direction: column;
+
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  transform : perspective(700px) rotateY(var(--rotate-y,0));
+  -webkit-transform:rotateY(0deg);
+}
+
+.flipme .carda {
+  transform: rotateY(180deg);
+}
+
+.cardaface, .cardaback{
+  position: absolute;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  
+ 
+}
+
+.cardaface{
+  overflow-y: hidden;
+  overflow-y: scroll;
+  padding-bottom: 4rem;
+}
+.cardaface::-webkit-scrollbar {
+  display: none;
+}
+
+.insidecardaback{
+  position: absolute;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow:scroll;
+  padding-bottom: 4rem;
+}
+.insidecardaback::-webkit-scrollbar {
+  display: none;
+}
+
+
+.cardaback {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  transform: rotateY(-180deg);
+  
+}
+
+.cardAroundSettings{
+  position:relative;
+
+  width:380px;
+  height:550px;
+
+  margin: auto auto;
+  padding:10px;
+
+}
+
+.sideButtons{
+
+  position:absolute;
+  top:1rem;
+  left:100%;
+  background:rgb(226, 226, 255); 
+  border-radius: 20px;
+  padding:10px;
+}
+
+.nextCardButton{
+
+  position:absolute;
+  top:31rem;
+  left:100%;
+  background:rgb(226, 226, 255); 
+  border-radius: 20px;
+  padding:10px;
+}
+
+.checkboxesCard{
+margin-left : 1rem;
+padding:0.5rem;
+font-weight: bold;
+font-size: 1.2rem;
+text-align: left;
+
+
+}
+
+.inputAnswerCard{
+  margin-top: 60%;
+  word-wrap: break-word;
+}
+
+.goodAnswerText{
+  border-radius: 20px;
+  background-color: chartreuse;
+}
+
+.badAnswerText{
+  border-radius: 20px;
+  background-color: rgb(224, 92, 92);
+}
+
+.noMoreCards{
+  text-align: center;
+
+}
+
+
+.buttonseance {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+
+.buttonseance:hover {
+  background-color: #555555;
+  color: white;
+}
+
+.addexam{
+  background: var(--bg);
+  border-radius: 20px;
+  box-shadow: var(--shadowBig);
+  margin: 1rem;
+  padding: 1.5rem;
+  flex-basis: 45%;
+  max-width: 100px;
+  min-height: 280px;
+  
+  position: relative;
+  text-align: center;
+}
